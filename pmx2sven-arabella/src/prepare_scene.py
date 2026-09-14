@@ -287,11 +287,12 @@ def main() -> int:
     working_objects = [bpy.data.objects[name] for name in working_names if name in bpy.data.objects]
     material_assignments = create_preview_materials(working_objects, project, pmx_report)
 
-    # MMD Tools ja converte PMX (X,Y,Z) para Blender (X,Z,Y). Para testar
-    # GoldSrc (X,-Z,Y), resta refletir o eixo Y e aplicar a escala estimada.
+    # MMD Tools converte PMX para Blender e deixa a frente do modelo em -Y,
+    # igual a referencia importada pelo Source Tools. A reflexao Y inicialmente
+    # proposta inverteria a frente, portanto o parent usa escala uniforme.
     alignment = bpy.data.objects.new("Arabella_Alignment_PREVIEW_NOT_APPLIED", None)
     setup_collection.objects.link(alignment)
-    alignment.scale = (3.48, -3.48, 3.48)
+    alignment.scale = (3.48, 3.48, 3.48)
     roots = [obj for obj in working_objects if obj.parent is None]
     for obj in roots:
         obj.parent = alignment
@@ -306,10 +307,14 @@ def main() -> int:
     _, wave_actions = import_smd(project / "assets/sven/player_anims/action_wave.smd", reference_collection, "APPEND", True, bip01)
     if wave_actions:
         wave_actions[0].name = "action_wave"
+        wave_actions[0].use_fake_user = True
 
     scene = bpy.context.scene
     scene.frame_start = 0
     scene.frame_end = max(1, int(validation["animations"]["details"][next(i for i, x in enumerate(validation["animations"]["details"]) if x["name"].casefold() == "action_wave.smd")]["frame_max"] or 1))
+    if bip01.animation_data:
+        bip01.animation_data.action = None
+    bip01.data.pose_position = "REST"
     scene.frame_set(scene.frame_start)
     bpy.context.view_layer.update()
     pre_align_bbox = world_bbox(working_objects)
@@ -329,14 +334,16 @@ def main() -> int:
         "bip01_armatures": [obj.name for obj in bpy.data.objects if obj.type == "ARMATURE" and obj.name == "Bip01"],
         "bip01_bones": len(bip01.data.bones),
         "test_action": "action_wave",
+        "test_action_loaded_not_active": True,
         "actions": [action.name for action in bpy.data.actions],
         "cleanup": cleanup,
         "collapse_expression_policy": "retained; pending visual confirmation from generated previews",
         "texture_assignments": material_assignments,
         "coordinate_test": {
             "raw_requested": "(X,Y,Z) -> (X,-Z,Y)",
-            "mmd_tools_import": "(X,Y,Z) -> (X,Z,Y)",
-            "remaining_parent_transform": "scale (3.48,-3.48,3.48)",
+            "mmd_tools_import": "converts PMX to Blender Z-up; model front is -Y",
+            "initial_reflection_result": "rejected: inverted front relative to Sven visor (-Y)",
+            "remaining_parent_transform": "uniform scale (3.48,3.48,3.48)",
             "preview_sole_alignment_z": sole_offset,
             "applied_to_mesh_data": False,
         },

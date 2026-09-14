@@ -2,3 +2,22 @@ AGENTS.md
 README.md
 phase_1_2_commands.log
 phase_1_2_report.md
+
+# pmx2sven-arabella: assets de terceiros (nao versionar sem confirmar a licenca).
+/pmx2sven-arabella/assets/source/Arabella.pmx
+/pmx2sven-arabella/assets/source/textures/*
+/pmx2sven-arabella/assets/sven/player.qc
+/pmx2sven-arabella/assets/sven/reference/*
+/pmx2sven-arabella/assets/sven/player_anims/*
+/pmx2sven-arabella/assets/sven/textures/*
+
+# pmx2sven-arabella: artefatos gerados e checkpoints binarios.
+/pmx2sven-arabella/blender/*.blend
+/pmx2sven-arabella/blender/checkpoints/*
+/pmx2sven-arabella/build/
+/pmx2sven-arabella/logs/
+/pmx2sven-arabella/**/__pycache__/
+/pmx2sven-arabella/**/*.py[cod]
+/pmx2sven-arabella/**/*.blend1
+/pmx2sven-arabella/**/*.blend2
+!/pmx2sven-arabella/**/.gitkeep

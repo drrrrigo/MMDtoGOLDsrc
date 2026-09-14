@@ -1,5 +1,5 @@
 {
-  "status": "draft_for_phase_5",
+  "status": "implemented_as_soft_weight_phase_5_and_pending_visual_refinement",
   "policy": "semantic_mapping_plus_spatial_redistribution_not_simple_rename",
   "mapping": {
     "Root/Center/Groove": ["Bip01"],

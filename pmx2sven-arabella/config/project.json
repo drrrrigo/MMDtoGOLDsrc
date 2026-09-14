@@ -1,6 +1,6 @@
 {
   "name": "pmx2sven-arabella",
-  "phase": 2,
+  "phase": 5,
   "source_model": "assets/source/Arabella.pmx",
   "source_textures": "assets/source/textures",
   "sven_qc": "assets/sven/player.qc",
@@ -13,7 +13,9 @@
     "goldsrc_x": "mmd_x",
     "goldsrc_y": "-mmd_z",
     "goldsrc_z": "mmd_y",
-    "preview_rotation_x_degrees": 90.0
+    "initial_mapping_status": "rejected_after_visual_and_geometry_check",
+    "resolved_blender_parent_scale": [3.48, 3.48, 3.48],
+    "resolved_front_axis": "-Y"
   },
   "initial_scale": 3.48,
   "goldsrc_bones": 34,
