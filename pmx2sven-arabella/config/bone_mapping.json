@@ -1,0 +1,27 @@
+{
+  "status": "draft_for_phase_5",
+  "policy": "semantic_mapping_plus_spatial_redistribution_not_simple_rename",
+  "mapping": {
+    "Root/Center/Groove": ["Bip01"],
+    "Waist/Lower Body": ["Bip01 Pelvis"],
+    "Upper Body": ["Bip01 Spine", "Bip01 Spine1"],
+    "Upper Body 2": ["Bip01 Spine2", "Bip01 Spine3"],
+    "Neck": ["Bip01 Neck"],
+    "Head/Eyes": ["Bip01 Head"],
+    "右足D": ["Bip01 R Leg"],
+    "右ひざD": ["Bip01 R Leg1"],
+    "右足首D": ["Bip01 R Foot"],
+    "右足先EX": ["Bip01 R Foot"],
+    "左足D": ["Bip01 L Leg"],
+    "左ひざD": ["Bip01 L Leg1"],
+    "左足首D": ["Bip01 L Foot"],
+    "左足先EX": ["Bip01 L Foot"]
+  },
+  "secondary_rules": {
+    "H_*": "Bip01 Head",
+    "eye_bones": "Bip01 Head",
+    "Q_*": "Bip01 Spine2 or Bip01 Spine3",
+    "chest_bones": "Bip01 Spine3",
+    "arm_ribbons": "corresponding arm or forearm"
+  }
+}

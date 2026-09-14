@@ -1,0 +1,18 @@
+# Assets de terceiros: nunca versionar sem confirmar a licenca.
+/assets/source/Arabella.pmx
+/assets/source/textures/*
+/assets/sven/player.qc
+/assets/sven/reference/*
+/assets/sven/player_anims/*
+/assets/sven/textures/*
+
+# Artefatos gerados e checkpoints binarios.
+/blender/*.blend
+/blender/checkpoints/*
+/build/
+/logs/
+__pycache__/
+*.py[cod]
+*.blend1
+*.blend2
+!.gitkeep

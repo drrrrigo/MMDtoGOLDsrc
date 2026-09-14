@@ -1,0 +1,22 @@
+{
+  "name": "pmx2sven-arabella",
+  "phase": 2,
+  "source_model": "assets/source/Arabella.pmx",
+  "source_textures": "assets/source/textures",
+  "sven_qc": "assets/sven/player.qc",
+  "sven_references": [
+    "assets/sven/reference/HEV_male_torso_reference.smd",
+    "assets/sven/reference/HEV_male_legs_reference.smd"
+  ],
+  "test_animation": "assets/sven/player_anims/action_wave.smd",
+  "coordinate_mapping": {
+    "goldsrc_x": "mmd_x",
+    "goldsrc_y": "-mmd_z",
+    "goldsrc_z": "mmd_y",
+    "preview_rotation_x_degrees": 90.0
+  },
+  "initial_scale": 3.48,
+  "goldsrc_bones": 34,
+  "expected_animation_references": 349,
+  "expected_sequences": 191
+}

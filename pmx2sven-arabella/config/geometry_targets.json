@@ -1,0 +1,14 @@
+{
+  "total_triangles": {"min": 8000, "max": 12000},
+  "materials": {
+    "Body": [3000, 4000],
+    "Hair_1": [1500, 2000],
+    "Latex": [1000, 1500],
+    "Arm sleeve": [1000, 1500],
+    "Face": [1000, 1500],
+    "Hair_2": [500, 800],
+    "Clothes": [700, 1000],
+    "Eyes": [300, 500]
+  },
+  "policy": "Nao aplicar na fase 1 ou 2; reduzir incrementalmente com checkpoint e preview."
+}
