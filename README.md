@@ -1,0 +1,1 @@
+An experimental, long-term project exploring how to convert and eventually automate the conversion of MMD/PMX character models into GoldSrc-compatible player models using Blender and Python. Built primarily for Sven Co-op, with no fixed completion date.
